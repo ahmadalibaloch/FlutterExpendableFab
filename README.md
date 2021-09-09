@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Placeholder(),
-        floatingActionButton: ExpandableFab(
+        floatingActionButton: ExpendableFab(
           distance: 112.0,
           children: [
             ActionButton(

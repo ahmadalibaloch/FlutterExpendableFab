@@ -1,6 +1,6 @@
 name: expendable_fab
 description: A Flutter package to create a nice circular expendable menu using a Floating Action Button.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/ahmadalibaloch/FlutterExpendableFab
 
 environment:
@@ -16,10 +16,3 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.xoredge.expendable_fab
-        pluginClass: ExpendableFabPlugin
-      ios:
-        pluginClass: ExpendableFabPlugin
