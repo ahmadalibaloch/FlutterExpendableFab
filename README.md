@@ -27,6 +27,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Placeholder(),
         floatingActionButton: ExpendableFab(
+          icon: Icon(Icons.favorite),
+          // closeIcon: Icon(Icons.close),
           distance: 112.0,
           children: [
             ActionButton(
@@ -55,6 +57,8 @@ You can customize the widget appareance using the following properties:
 | Property  | Description | Default |
 |----------|-------------|---------|
 | distance | Sets the widget distance from bottom and right side | `112` |
+| icon     | The FAB initial icon | `Icon(Icons.create)` |
+| closeIcon     | The FAB close icon | `Icon(Icons.close)` |
 
 ## Contributing
 
