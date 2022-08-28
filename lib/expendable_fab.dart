@@ -5,13 +5,17 @@ import 'package:flutter/material.dart';
 class ExpendableFab extends StatefulWidget {
   const ExpendableFab({
     Key? key,
+    this.icon,
+    this.closeIcon,
     this.initialOpen,
     this.distance = 112.0,
     required this.children,
   }) : super(key: key);
 
-  final bool? initialOpen;
+  final Icon? icon;
+  final Icon? closeIcon;
   final double distance;
+  final bool? initialOpen;
   final List<Widget> children;
 
   @override
@@ -85,10 +89,11 @@ class _ExpendableFabState extends State<ExpendableFab>
             onTap: _toggle,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.close,
-                color: Theme.of(context).primaryColor,
-              ),
+              child: widget.closeIcon ??
+                  Icon(
+                    Icons.close,
+                    color: Theme.of(context).primaryColor,
+                  ),
             ),
           ),
         ),
@@ -133,7 +138,7 @@ class _ExpendableFabState extends State<ExpendableFab>
           duration: const Duration(milliseconds: 250),
           child: FloatingActionButton(
             onPressed: _toggle,
-            child: const Icon(Icons.create),
+            child: widget.icon ?? Icon(Icons.create),
           ),
         ),
       ),
