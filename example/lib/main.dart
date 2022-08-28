@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:expendable_fab/expendable_fab.dart';
 
 void main() {
@@ -32,6 +31,8 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: ExpendableFab(
           distance: 2.0,
+          icon: Icon(Icons.favorite), // Custom initial icon
+          //closeIcon: Icon(Icons.delete), // Custom close icon
           children: [
             ActionButton(
               onPressed: () => toast(context, 'balance'),
@@ -56,7 +57,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   toast(BuildContext context, String action) {
-    _scaffoldkey.currentState
-        ?.showSnackBar(SnackBar(content: Text("Selected $action")));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Selected $action")),
+    );
   }
 }
