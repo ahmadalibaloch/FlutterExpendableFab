@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         body: Placeholder(),
         floatingActionButton: ExpendableFab(
           icon: Icon(Icons.favorite),
-          // closeIcon: Icon(Icons.close),
+          closeIcon: Icon(Icons.close),
           distance: 112.0,
           children: [
             ActionButton(
