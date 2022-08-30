@@ -19,36 +19,40 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Expendable Floating Fab Example'),
-        ),
-        body: Center(
-          child: Text('Click on bottom right floating button to shine'),
-        ),
-        floatingActionButton: ExpendableFab(
-          distance: 2.0,
-          icon: Icon(Icons.favorite),
-          closeIcon: Icon(Icons.delete),
-          children: [
-            ActionButton(
-              onPressed: () => toast(context, 'balance'),
-              icon: const Icon(Icons.account_balance),
+      home: Builder(
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Expendable Floating Fab Example'),
             ),
-            ActionButton(
-              onPressed: () => toast(context, 'money'),
-              icon: const Icon(Icons.money),
+            body: Center(
+              child: Text('Click on bottom right floating button to shine'),
             ),
-            ActionButton(
-              onPressed: () => toast(context, 'credit card'),
-              icon: const Icon(Icons.credit_card),
+            floatingActionButton: ExpendableFab(
+              distance: 2.0,
+              icon: Icon(Icons.favorite),
+              closeIcon: Icon(Icons.delete),
+              children: [
+                ActionButton(
+                  onPressed: () => toast(context, 'balance'),
+                  icon: const Icon(Icons.account_balance),
+                ),
+                ActionButton(
+                  onPressed: () => toast(context, 'money'),
+                  icon: const Icon(Icons.money),
+                ),
+                ActionButton(
+                  onPressed: () => toast(context, 'credit card'),
+                  icon: const Icon(Icons.credit_card),
+                ),
+                ActionButton(
+                  onPressed: () => toast(context, 'file copy'),
+                  icon: const Icon(Icons.file_copy),
+                ),
+              ],
             ),
-            ActionButton(
-              onPressed: () => toast(context, 'file copy'),
-              icon: const Icon(Icons.file_copy),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
