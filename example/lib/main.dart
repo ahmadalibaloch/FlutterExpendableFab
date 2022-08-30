@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:expendable_fab/expendable_fab.dart';
 
 void main() {
@@ -12,8 +11,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final GlobalKey<ScaffoldState> _scaffoldkey = new GlobalKey<ScaffoldState>();
-
   @override
   void initState() {
     super.initState();
@@ -23,7 +20,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        key: _scaffoldkey,
         appBar: AppBar(
           title: const Text('Expendable Floating Fab Example'),
         ),
@@ -32,6 +28,8 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: ExpendableFab(
           distance: 2.0,
+          icon: Icon(Icons.favorite),
+          closeIcon: Icon(Icons.delete),
           children: [
             ActionButton(
               onPressed: () => toast(context, 'balance'),
@@ -56,7 +54,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   toast(BuildContext context, String action) {
-    _scaffoldkey.currentState
-        ?.showSnackBar(SnackBar(content: Text("Selected $action")));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Selected $action")),
+    );
   }
 }
