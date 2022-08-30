@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
               child: Text('Click on bottom right floating button to shine'),
             ),
             floatingActionButton: ExpendableFab(
-              distance: 2.0,
+              distance: 150,
               icon: Icon(Icons.favorite),
               closeIcon: Icon(Icons.delete),
               children: [
